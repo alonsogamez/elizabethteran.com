@@ -1,21 +1,16 @@
 :root {
   --background-titles: #888849;
   --background-color: #c5915d;
-  --text-color: #333;
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --light-bg: #ffffff;
-  --dark-bg: #c5915d;
+  --color-rata: #333;
+  --button-hover-color: #6c757d;
   --light-text: #ffffff;
-  --dark-text: #000000;
 
-  --font-family-demi: "Atlanta Demi", serif;
-  --font-family-book: "Atlanta Book", serif;
-  --font-family-cardo: "Cardo Bold", serif;
+  --font-family-menu: "Atlanta Demi", serif;
+  --font-family-book-title: "Atlanta Book", serif;
+  --font-family-content: "Cardo Bold", serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;
-  --font-size-xs: 10px;
   --line-height-base: 1.6;
 
   --spacing-xs: 0.25rem;
@@ -23,9 +18,8 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --max-width: 1200px;
-  --min-width: 350px;
 
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   --border-radius: 8px;
 }
 
@@ -87,7 +81,6 @@ $breakpoints: (
 }
 
 body {
-  color: var(--text-color);
   line-height: var(--line-height-base);
 }
 
@@ -97,9 +90,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color);
+  color: var(--color-rata);
   margin: var(--spacing-sm) var(--spacing-sm);
-  font-family: var(--font-family-demi);
+  font-family: var(--font-family-menu);
 }
 
 p {
@@ -107,11 +100,21 @@ p {
   font-size: var(--font-size-base);
 }
 
+%scroll-anchor {
+  scroll-margin-top: 50px;
+}
+
+#home,
+#libros,
+#opiniones,
+#escritora {
+  @extend %scroll-anchor;
+}
+
 /* Estilo para el main */
 main {
   padding-top: 50px;
-  font-family: var(--font-family-cardo);
-  /*font-size: 1.1rem;*/
+  font-family: var(--font-family-content);
   display: block;
   max-width: var(--max-width);
   min-width: var(--min-width);
@@ -133,7 +136,7 @@ header.top-bar {
   height: 50px;
   background-color: var(--background-titles);
   color: var(--light-text);
-  font-family: var(--font-family-demi);
+  font-family: var(--font-family-menu);
   font-weight: bold;
   z-index: 1000;
 
@@ -163,22 +166,6 @@ header.top-bar {
       display: block;
     }
 
-    @include respond-to-max(sm) {
-      nav {
-        padding: 0 var(--spacing-xs);
-      }
-
-      .logo-title {
-        max-height: 50px;
-        overflow: hidden;
-      }
-
-      .logo-title img {
-        height: auto;
-        max-height: 100%;
-      }
-    }
-
     .nav-right {
       display: flex;
       align-items: center;
@@ -198,6 +185,16 @@ header.top-bar {
   @include respond-to-max(sm) {
     nav {
       padding: 0 var(--spacing-xs);
+    }
+
+    .logo-title {
+      max-height: 50px;
+      overflow: hidden;
+    }
+
+    .logo-title img {
+      height: auto;
+      max-height: 100%;
     }
   }
 
@@ -239,7 +236,7 @@ header.top-bar {
       text-decoration: none;
 
       &:hover {
-        color: var(--dark-text);
+        color: var(--color-rata);
       }
     }
 
@@ -252,7 +249,7 @@ header.top-bar {
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: var(--dark-bg);
+        background-color: var(--background-color);
         padding: var(--spacing-md);
         width: 35%;
         max-width: var(--max-width);
@@ -264,7 +261,6 @@ header.top-bar {
 
 /* HOME */
 #home {
-  scroll-margin-top: 50px;
   position: relative;
   z-index: 0;
 
@@ -318,7 +314,6 @@ header.top-bar {
 
   a {
     text-decoration: none;
-    color: var(--primary-color);
   }
 
   button {
@@ -333,8 +328,8 @@ header.top-bar {
 
   @include respond-to-max(md) {
     position: relative;
-    top: 0.2rem;
-    left: 0.2rem;
+    top: initial;
+    left: initial;
     width: 85%;
     margin: var(--spacing-md) auto;
     margin-top: -80px;
@@ -345,10 +340,6 @@ header.top-bar {
 }
 
 /* LIBROS */
-#libros {
-  scroll-margin-top: 50px;
-}
-
 .books-container {
   display: flex;
   flex-wrap: wrap;
@@ -360,24 +351,20 @@ header.top-bar {
 .book {
   flex: 1 1 calc(33.333% - var(--spacing-md));
   max-width: calc(33.333% - var(--spacing-md));
-  background-color: var(--light-bg);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-md);
   box-sizing: border-box;
 
   h3 {
-    background-color: var(--dark-bg);
+    background-color: var(--background-color);
     color: var(--light-text);
     padding: var(--spacing-sm);
     width: 100%;
-    font-family: var(--font-family-book);
+    font-family: var(--font-family-book-title);
     font-weight: lighter;
-    margin: -var(--spacing-md) -var(--spacing-md) var(--spacing-sm) -var(
-        --spacing-md
-      );
+    margin: 0;
     margin-bottom: var(--spacing-sm);
-
     font-size: var(--font-size-sm); // tamaño base para móviles
 
     @include respond-to-min(sm) {
@@ -404,7 +391,7 @@ header.top-bar {
     display: inline-block;
     margin-left: auto;
     margin: var(--spacing-sm) 0;
-    background-color: var(--text-color);
+    background-color: var(--color-rata);
     color: var(--light-text);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius);
@@ -414,7 +401,7 @@ header.top-bar {
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: var(--secondary-color);
+      background-color: var(--button-hover-color);
     }
   }
 
@@ -429,7 +416,7 @@ header.top-bar {
 
   @include respond-to-max(md) {
     flex: 1 1 100%;
-    max-width: 100%;
+    max-width: 95%;
     img {
       float: none;
       display: block;
@@ -446,9 +433,6 @@ header.top-bar {
 }
 
 /* REVIEWS */
-#opiniones {
-  scroll-margin-top: 50px;
-}
 .reviews-carousel {
   width: 100%;
   overflow: hidden;
@@ -460,7 +444,7 @@ header.top-bar {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-sm);
-  background-color: var(--dark-bg);
+  background-color: var(--background-color);
 
   button {
     background-color: transparent;
@@ -519,11 +503,6 @@ svg {
     margin-bottom: 1rem;
     font-style: italic;
   }
-
-  footer {
-    background-color: var(--background-color);
-    margin-top: 0;
-  }
 }
 
 .carousel-viewport {
@@ -547,18 +526,10 @@ svg {
       margin-top: 0;
     }
   }
-
-  .carousel article header h3 {
-    margin-bottom: 1rem;
-  }
 }
 
 /* ESCRITORA */
-
 #escritora {
-  background-color: #fdfdfd;
-  scroll-margin-top: 50px;
-
   .escritora-container {
     padding: 0 2rem;
     display: flex;
@@ -579,7 +550,6 @@ svg {
     }
   }
 
-  // Estilos para pantallas medianas y grandes
   @include respond-to-min(md) {
     .escritora-container {
       padding: 0;
@@ -610,7 +580,7 @@ svg {
   width: 100%;
   background-color: var(--background-titles);
   color: var(--light-text);
-  font-family: var(--font-family-demi);
+  font-family: var(--font-family-menu);
   text-align: center;
   padding: var(--spacing-md);
 
