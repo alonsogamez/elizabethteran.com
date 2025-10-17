@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Especifica la ubicación del sitemap
+Sitemap: https://www.elizabethteran.com/sitemap.xml

@@ -20,10 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function toggleTexto() {
+    const arrow = document.getElementById("arrow-path");
     textoExpandido = !textoExpandido;
     textoElement.textContent = textoExpandido
       ? writerFullText
       : writerTruncatedText;
+
+    if (textoExpandido) {
+      arrow.setAttribute("d", "M40 50 L50 40 L60 50");
+    } else {
+      arrow.setAttribute("d", "M40 40 L50 50 L60 40");
+    }
   }
 
   function toggleMenu() {

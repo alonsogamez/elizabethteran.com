@@ -8,6 +8,7 @@
   --font-family-menu: "Atlanta Demi", serif;
   --font-family-book-title: "Atlanta Book", serif;
   --font-family-content: "Cardo Bold", serif;
+  --font-family-author: "Zhivilia", serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;
@@ -42,6 +43,14 @@
 @font-face {
   font-family: "Cardo Bold";
   src: url("./assets/fonts/Cardo-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zhivilia";
+  src: url("./assets/fonts/Zhivilia.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -93,6 +102,18 @@ h6 {
   color: var(--color-rata);
   margin: var(--spacing-sm) var(--spacing-sm);
   font-family: var(--font-family-menu);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* Evita que el texto se envuelva */
+  border-width: 0;
 }
 
 p {
@@ -153,17 +174,17 @@ header.top-bar {
     .nav-left {
       display: flex;
       align-items: center;
+      height: 100%;
+      margin: 0;
     }
 
-    .nav-left .logo-title {
-      width: 200px;
-      height: auto;
-    }
-
-    .logo-title {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    .nombre-autora {
+      font-family: var(--font-family-author);
+      font-size: 2rem;
+      font-weight: lighter;
+      display: flex;
+      height: 100%;
+      margin: 0;
     }
 
     .nav-right {
@@ -365,19 +386,6 @@ header.top-bar {
     font-weight: lighter;
     margin: 0;
     margin-bottom: var(--spacing-sm);
-    font-size: var(--font-size-sm); // tamaño base para móviles
-
-    @include respond-to-min(sm) {
-      font-size: var(--font-size-md); // pantallas pequeñas
-    }
-
-    @include respond-to-min(md) {
-      font-size: var(--font-size-md); // pantallas medianas
-    }
-
-    @include respond-to-min(lg) {
-      font-size: var(--font-size-lg); // pantallas grandes
-    }
   }
 
   p {
@@ -416,7 +424,7 @@ header.top-bar {
 
   @include respond-to-max(md) {
     flex: 1 1 100%;
-    max-width: 95%;
+    max-width: 95vw;
     img {
       float: none;
       display: block;
@@ -543,9 +551,9 @@ svg {
     }
 
     img {
-      margin-left: 3.5rem;
-      min-height: 250px;
-      min-width: 250px;
+      margin-left: 1.5rem;
+      min-height: 150px;
+      min-width: 150px;
       height: auto;
     }
   }
@@ -563,6 +571,7 @@ svg {
         flex: 1 1 70%;
         text-align: center;
         margin-left: 1.5rem;
+        margin-bottom: 0;
       }
 
       img {

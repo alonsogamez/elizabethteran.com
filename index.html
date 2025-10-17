@@ -8,23 +8,89 @@
     <base href="/" />
     <meta
       name="description"
-      content="Descubre el mundo literario de Elizabeth Terán, escritora mexicana apasionada por la familia, la naturaleza y la vida. Conoce sus libros, opiniones y forma de contacto."
+      content="Elizabeth Terán: Descubre las aclamadas novelas de la escritora mexicana. Historias de amor, resiliencia y lazos familiares que te inspirarán. Conoce su obra completa."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="./assets/images/et.webp" />
     <link rel="preload" as="image" href="./assets/images/fotoparada1200.webp" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Elizabeth Terán",
+        "url": "https://www.elizabethteran.com/",
+        "sameAs": [
+          "https://www.facebook.com/help/instagram/176235449218188?locale=es_LA",
+          "https://kdp.amazon.com/es_ES/help/topic/G200644310",
+          "https://www.goodreads.com/user/sign_in"
+        ],
+        "jobTitle": "Escritora y Novelista",
+        "image": "https://www.instagram.com/elizabethteran_shop/?hl=en",
+        "knowsAbout": [
+          "Novelas de Resiliencia",
+          "Literatura Blanca",
+          "Valores Familiares"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "https://www.amazon.com/-/es/Elizabeth-Ter%C3%A1n-ebook/dp/B09KG17SPK",
+        "author": {
+          "@type": "Person",
+          "name": "Elizabeth Terán"
+        },
+        "workExample": [
+          {
+            "@type": "Book",
+            "bookEdition": "Edición Kindle",
+            "bookFormat": "https://schema.org/EBook",
+            "inLanguage": "es",
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "https://www.amazon.com/-/es/Elizabeth-Ter%C3%A1n-ebook/dp/B09KG17SPK"
+            }
+          }
+        ],
+        "genre": "Novela Romántica y Lecciones de Resiliencia",
+        "description": "Una historia de amor y resiliencia que te mostrará el valor inquebrantable de la familia y la búsqueda de la plenitud personal."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "https://www.amazon.com/-/es/Elizabeth-Ter%C3%A1n-ebook/dp/B0BZYLGXMM",
+        "author": {
+          "@type": "Person",
+          "name": "Elizabeth Terán"
+        },
+        "url": "https://www.elizabethteran.com/#libros",
+        "image": "URL_DE_LA_PORTADA_DEL_LIBRO_2",
+        "workExample": [
+          {
+            "@type": "Book",
+            "bookEdition": "Edición Kindle y Tapa Blanda",
+            "bookFormat": "https://schema.org/EBook",
+            "inLanguage": "es",
+            "potentialAction": {
+              "@type": "ReadAction",
+              "target": "https://www.amazon.com/-/es/Elizabeth-Ter%C3%A1n-ebook/dp/B0BZYLGXMM"
+            }
+          }
+        ],
+        "genre": "Novela de Amor y Búsqueda de Identidad",
+        "description": "Explora el intenso viaje de la protagonista para descubrir su verdadera identidad y propósito, un camino marcado por el amor incondicional y las revelaciones familiares."
+      }
+    </script>
   </head>
   <body>
     <header class="top-bar">
       <nav>
         <div class="nav-left">
-          <img
-            class="logo-title"
-            src="/assets/images/elizabethteran.com1.webp"
-            alt="Elizabeth Teran titulo"
-            width="250"
-            height="50"
-          />
+          <p class="nombre-autora">Elizabeth Terán</p>
         </div>
         <div class="nav-right">
           <span class="menu-toggle" id="menu-toggle"> ☰ </span>
@@ -56,6 +122,10 @@
     <div class="wrapper">
       <main>
         <section id="home">
+          <h1 class="visually-hidden">
+            Elizabeth Terán | Escritora Mexicana de Novelas de Resiliencia y
+            Familia
+          </h1>
           <div>
             <picture>
               <source
@@ -93,6 +163,7 @@
                 >
                   <circle cx="50" cy="44" r="24" fill="white" />
                   <path
+                    id="arrow-path"
                     d="M40 40 L50 50 L60 40"
                     stroke="#888849"
                     stroke-width="6"
@@ -116,7 +187,7 @@
                 src="./assets/images/AlcazarLibro.webp"
                 width="120"
                 height="150"
-                alt="Portada del libro El Alcázar de mi Vida"
+                alt="Portada del libro (novela) El Alcázar de mi Vida - Una historia de amor y resiliencia"
                 loading="lazy"
               />
               <p class="book-text">
@@ -150,7 +221,7 @@
               </h3>
               <img
                 src="assets/images/OrigenesLibro.webp"
-                alt="Portada del libro Los Orígenes de mi Vida"
+                alt="Portada del libro (novela) Los Orígenes de mi Vida - Una historia de amor y búsqueda"
                 loading="lazy"
                 width="120"
                 height="150"
@@ -184,7 +255,7 @@
               </h3>
               <img
                 src="assets/images/VictoriaLibro.webp"
-                alt="Portada del libro La Victoria de mi Vida"
+                alt="Portada del libro (novela) La Victoria de mi Vida - Una historia de amor y plenitud"
                 loading="lazy"
                 width="120"
                 height="150"
@@ -399,7 +470,7 @@
               src="assets/images/BettyBottom.webp"
               width="100"
               height="150"
-              alt="Elizabeth Terán"
+              alt="Foto de frente de la escritora Elizabeth Terán"
               loading="lazy"
             />
           </div>
