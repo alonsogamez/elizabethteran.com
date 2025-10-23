@@ -17,6 +17,7 @@
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
   --max-width: 1200px;
   --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   --border-radius: 8px;
@@ -515,10 +516,33 @@ svg {
 .main-footer {
   width: 100%;
   background-color: var(--background-titles);
-  color: var(--light-text);
+  color: var(--color-rata);
   font-family: var(--font-family-menu);
   text-align: center;
   padding: var(--spacing-md);
+}
+.main-footer .nav-links-footer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  overflow: hidden;
+  margin: var(--spacing-md) 0;
+}
+.main-footer .nav-links-footer a {
+  color: var(--light-text);
+  text-decoration: none;
+}
+.main-footer .nav-links-footer a:hover {
+  color: var(--color-rata);
+}
+@media (max-width: 576px) {
+  .main-footer .nav-links-footer {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    list-style: none !important;
+  }
 }
 .main-footer p {
   margin: 0;
