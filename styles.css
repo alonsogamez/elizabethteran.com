@@ -482,6 +482,7 @@ svg {
 }
 #escritora .escritora-container .escritora-texto {
   max-width: 600px;
+  margin-bottom: 1rem;
 }
 #escritora .escritora-container img {
   margin-left: 1.5rem;
@@ -494,19 +495,19 @@ svg {
     padding: 0;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     text-align: center;
-    gap: 4rem;
+    gap: 3.9rem;
   }
   #escritora .escritora-container .escritora-texto {
     flex: 1 1 70%;
     text-align: center;
     margin-left: 1.5rem;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
   #escritora .escritora-container img {
     flex: 0 0 auto;
-    width: 150px;
+    width: 300px;
     height: auto;
     margin-right: 1.5rem;
   }
@@ -536,6 +537,17 @@ svg {
 }
 .main-footer .nav-links-footer a:hover {
   color: var(--color-rata);
+}
+.main-footer .nav-links-footer div a img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: transparent;
+}
+.main-footer .nav-links-footer div a img:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 @media (max-width: 576px) {
   .main-footer .nav-links-footer {
